@@ -1,5 +1,9 @@
 package composite.fornecedorComCarga;
 
+import adapter.base.AdaptadorDeGeradorNuclearParaFornecedorDeEnergia;
+import adapter.base.AdaptadorSubclasseDeGeradorParaFornecedor;
+import adapter.base.GeradorDeEnergiaNuclear;
+
 public class AppCompositeBase {
 	
 	public static void main(String[] args) {
@@ -14,6 +18,8 @@ public class AppCompositeBase {
 		FornecedorComposite composite = new FornecedorComposite();
 		composite.adicionarFornecedor(pilhaAlcalina);
 		composite.adicionarFornecedor(pilhaNormal);
+		composite.adicionarFornecedor(new AdaptadorDeGeradorNuclearParaFornecedorDeEnergia(new GeradorDeEnergiaNuclear()));
+		composite.adicionarFornecedor(new AdaptadorSubclasseDeGeradorParaFornecedor());
 		
 		controleDaSala.setFornecedorDeEnergia(composite);
 		
