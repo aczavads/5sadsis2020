@@ -11,6 +11,7 @@ public class AdaptadorDeGeradorNuclearParaFornecedorDeEnergia implements Fornece
 	
 	@Override
 	public double fornecer() {
+		//Isto é um delegation!
 		return gerador.energizar();
 	}
 }
