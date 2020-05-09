@@ -15,10 +15,10 @@ public class AppBuilder {
 				2);
 		
 		Bolo bolo5 = (new Bolo.Builder())
-				.massa(TipoDaMassa.SIMPLES, SaborDaMassa.CHOCOLATE)
+				.frio()
 				.cobertura(TipoDaCobertura.GANACHE, SaborDaCobertura.BAUNILHA)
 				.camadas(2)
-				.frio()
+				.massa(TipoDaMassa.SIMPLES, SaborDaMassa.CHOCOLATE)
 				.build();
 		
 		
