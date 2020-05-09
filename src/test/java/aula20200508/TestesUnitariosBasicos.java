@@ -7,17 +7,9 @@ import org.junit.jupiter.api.Test;
 class TestesUnitariosBasicos {
 
 	@Test
-	void testarGerarExceção() {
-		
-		assertThrows(RuntimeException.class, () -> {
-			gerarExceção();
-		});
-		
+	void test() {
+		fail("Falhou");		
 	}
 	
-	
-	public void gerarExceção() {
-		throw new RuntimeException("Teste");
-	}
 
 }
