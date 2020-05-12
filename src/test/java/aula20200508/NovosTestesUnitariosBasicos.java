@@ -8,13 +8,15 @@ import org.junit.jupiter.api.Test;
 
 class NovosTestesUnitariosBasicos {
 
+	
+	
 	@Test
 	void testarComAssertSeNaoLancaExcecao() {
 		assertDoesNotThrow(() -> {
 			lancarExcecao(false);
-		});
+		}, "Vixe!");
 	}
-	
+
 	@Test
 	void testarComAssertSeLancaExcecao() {
 		assertThrows(RuntimeException.class, () -> {
@@ -30,18 +32,18 @@ class NovosTestesUnitariosBasicos {
 			fail("Deveria ter lançado a exceção!");
 		}
 	}
-	
+
 	@Test
 	void testarComTryCatchSeLancaExcecao() {
 		try {
 			lancarExcecao(true);
 			fail("Deveria ter lançado a exceção!");
 		} catch (RuntimeException e) {
-			//Não faremos nada com a exceção porque é justamente isso que queremos, que ele lançe uma exceção!
+			// Não faremos nada com a exceção porque é justamente isso que queremos, que ele
+			// lançe uma exceção!
 		}
 	}
-	
-	
+
 	public void lancarExcecao(boolean lancar) {
 		if (lancar) {
 			throw new RuntimeException("Mensagem da exceção");
