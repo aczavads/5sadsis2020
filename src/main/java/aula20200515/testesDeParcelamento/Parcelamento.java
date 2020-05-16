@@ -15,7 +15,9 @@ public class Parcelamento {
 		validarValorPositivo(valorMínimoDaParcela);
 		validarValorPositivo(quantidadeDeParcelas);
 		
-		BigDecimal valorParcela = valorParaParcelar.divide(new BigDecimal(quantidadeDeParcelas), 2, RoundingMode.HALF_DOWN);
+		BigDecimal valorParcela = valorParaParcelar.divide(new BigDecimal(quantidadeDeParcelas), 2, RoundingMode.HALF_DOWN);		
+		validarSeValorParcelaSuperiorAoMínimo(valorParcela, valorMínimoDaParcela);
+		
 		BigDecimal diferença = valorParaParcelar.subtract(valorParcela.multiply(new BigDecimal(quantidadeDeParcelas)));
 		ArrayList<Parcela> parcelas = new ArrayList<>();
 		for (int i = 1; i <= quantidadeDeParcelas; i++) {
@@ -27,6 +29,12 @@ public class Parcelamento {
 			parcelas.get(parcelas.size()-1).setValor(valorParcela.add(diferença));
 		}
 		return parcelas;
+	}
+
+	private static void validarSeValorParcelaSuperiorAoMínimo(BigDecimal valorDaParcela, BigDecimal valorMínimoDaParcela) {
+		if (valorDaParcela.compareTo(valorMínimoDaParcela)<0) {
+			throw new ValorDaParcelaInferiorAoValorMínimoException();
+		}		
 	}
 
 	private static void validarValorPositivo(int valor) {
