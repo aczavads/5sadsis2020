@@ -24,7 +24,6 @@ public class CorService {
 		cor.setNome(novoNome);
 		repo.save(cor);
 		repo.commit();
-		
 	}
 	
 
