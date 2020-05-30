@@ -28,6 +28,9 @@ class TestesDeICMS {
 		assertEquals(alíquotaPR, vendaPR.getAlíquotaICMS());
 		assertEquals(alíquotaSC, vendaSC.getAlíquotaICMS());
 		assertEquals(alíquotaSP, vendaSP.getAlíquotaICMS());
+		assertEquals(new BigDecimal("17.00"), vendaPR.getAlíquotaICMS());
+		assertEquals(new BigDecimal("7.00"), vendaSC.getAlíquotaICMS());
+		assertEquals(new BigDecimal("12.00"), vendaSP.getAlíquotaICMS());
 	}
 
 }
