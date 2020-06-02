@@ -1,4 +1,4 @@
-package aula20205029.springBootApp;
+package springBootApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

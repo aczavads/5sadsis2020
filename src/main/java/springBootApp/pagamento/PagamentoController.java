@@ -1,4 +1,4 @@
-package aula20205029.springBootApp.pagamento;
+package springBootApp.pagamento;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -13,8 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/pagamentos")
 public class PagamentoController {
-	@Autowired
 	private PagamentoService service;
+	
+	
+	@Autowired
+	public void setService(PagamentoService service) {
+		this.service = service;
+	}
 	
 	@GetMapping("/{id}")
 	public void get(@PathVariable("id") Long id) {

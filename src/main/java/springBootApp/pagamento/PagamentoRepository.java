@@ -1,4 +1,4 @@
-package aula20205029.springBootApp.pagamento;
+package springBootApp.pagamento;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

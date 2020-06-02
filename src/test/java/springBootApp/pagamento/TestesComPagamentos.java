@@ -1,6 +1,6 @@
-package aula20205029.springBootApp.pagamento;
+package springBootApp.pagamento;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 import java.math.BigDecimal;
