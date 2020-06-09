@@ -5,6 +5,8 @@ import java.util.UUID;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 @Entity
 public class Brinquedo {
 	@Id
@@ -14,6 +16,16 @@ public class Brinquedo {
 	
 	private Integer idadeMinimaEmMeses;
 	
+
+	public Brinquedo(String id, String nome, Integer idadeMinimaEmMeses) {
+//		if (nome == null || nome.trim().length() == 0) {
+//			throw new ValorInválidoException(); 
+//		}
+		this.id = id;
+		this.nome = nome;
+		this.idadeMinimaEmMeses = idadeMinimaEmMeses;
+	}
+
 	public Brinquedo() {
 		id = UUID.randomUUID().toString();
 	}
@@ -28,6 +40,12 @@ public class Brinquedo {
 		return idadeMinimaEmMeses;
 	}
 
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public void setIdadeMinimaEmMeses(Integer idadeMinimaEmMeses) {
+		this.idadeMinimaEmMeses = idadeMinimaEmMeses;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
