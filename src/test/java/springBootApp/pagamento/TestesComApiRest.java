@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 
@@ -31,8 +32,9 @@ class TestesComApiRest {
 
 	@Test
 	void testar_post_api_pagamentos() throws Exception {
-		BigDecimal response = restTemplate.postForObject("/api/pagamentos/33", "", BigDecimal.class);		
-		assertTrue(response.doubleValue() > 0);
+		ResponseEntity<BigDecimal> response = restTemplate.postForEntity("/api/pagamentos/33", "", BigDecimal.class);
+		assertEquals(HttpStatus.OK, response.getStatusCode());
+		assertTrue(response.getBody().doubleValue() > 0);
 	}
 
 }

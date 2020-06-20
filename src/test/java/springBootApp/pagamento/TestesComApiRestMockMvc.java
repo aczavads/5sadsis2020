@@ -12,6 +12,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+import springBootApp.conta.ContaController;
+
 @WebMvcTest
 @AutoConfigureMockMvc
 class TestesComApiRestMockMvc {
@@ -20,6 +22,9 @@ class TestesComApiRestMockMvc {
 	
 	@MockBean
 	private PagamentoService service;
+	
+	@MockBean
+	private ContaController controller;
 	
 
 	@Test
